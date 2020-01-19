@@ -31,8 +31,15 @@ Plug 'luochen1990/rainbow'
 Plug 'thinca/vim-quickrun'
 Plug 'rhlobo/vim-super-retab'
 Plug 'mattn/emmet-vim'
+
 "HTML and XML autocomplete
 Plug 'sukima/xmledit'
+
+"Version Control and Git
+Plug 'tpope/vim-fugitive'
+
+"Spotify Control
+Plug 'HendrikPetertje/vimify'
 
 "Training
 Plug 'takac/vim-hardtime'
@@ -61,10 +68,19 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <F2> :set ts=2 sw=2 noet<CR>
+
+
 let g:hardtime_default_on = 1
 let g:ale_linters = { 'python': ['flake8', ] }
 let g:rainbow_active = 1
 let g:airline#extensions#ale#enabled = 1
+
+" Spotify Integration
+let g:spotify_country_code = 'US'
+let g:spotify_prev_key = "<F9>"
+let g:spotify_playpause_key = "<F10>"
+let g:spotify_next_key = "<F11>"
+let g:spotify_token=$SPOTIFY_CLIENT_SECRET
 
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>

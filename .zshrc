@@ -190,3 +190,5 @@ bindkey -v
 	zle -N cd_home
 	bindkey "^h" cd_home
 
+source ~/dotfiles/spotify_env.sh
+
