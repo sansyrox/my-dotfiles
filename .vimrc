@@ -1,6 +1,6 @@
 let mapleader=","
 set number
-set guifont=Dank\ Mono:h13
+set guifont=Dank\ Mono:h14
 set macligatures
 syntax on
 filetype plugin on
