@@ -103,8 +103,8 @@ let g:spotify_next_key = "<F11>"
 
 set encoding=utf8
 let g:airline_powerline_fonts = 1
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
+nnoremap <Enter> o<ESC>
+nnoremap <S-Enter> O<ESC>
 nnoremap ª m`:+g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap º m`:-g/\m^\s*$/d<CR>``:noh<CR>
 
