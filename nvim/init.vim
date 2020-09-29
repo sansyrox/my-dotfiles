@@ -77,10 +77,10 @@ hi TabLineFill gui=none guibg=#022a4b
 hi TabLine gui=none guibg=#022a4b
 hi TabLineSel gui=bold guibg=#03467c
 
-" open new split panes to right and below
-set splitright
-set splitbelow
-set relativenumber
+" " open new split panes to right and below
+" set splitright
+" set splitbelow
+" set relativenumber
 
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
@@ -88,11 +88,11 @@ tnoremap <Esc> <C-\><C-n>
 " emacs key bindings in insertmode
 inoremap <C-e> <C-o>$
 inoremap <C-a> <C-o>0
-inoremap <C-h> <C-o>h
-inoremap <C-j> <C-o>j
-inoremap <C-k> <C-o>k
-inoremap <C-l> <C-o>l
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 inoremap <C-w> <C-o>w
-inoremap <C-e> <C-o>w
 inoremap <C-b> <C-o>b
 
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"

@@ -57,7 +57,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'ChristianChiarulli/nv-code'
     " Plug 'kyazdani42/blue-moon'
     " Intellisense
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim'
+    ", {'branch': 'release'}
     " Status Line
     Plug 'vim-airline/vim-airline'
     Plug 'kevinhwang91/rnvimr'
