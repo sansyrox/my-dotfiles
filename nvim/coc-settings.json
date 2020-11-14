@@ -33,8 +33,10 @@
     "yaml",
     "json",
     "python",
-    "java"
+    "java",
+    "rust"
   ],
+  //    "scss",
   "coc.preferences.hoverTarget": "float",
 
   // python config

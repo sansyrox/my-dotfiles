@@ -80,7 +80,7 @@ hi TabLineSel gui=bold guibg=#03467c
 " " open new split panes to right and below
 " set splitright
 " set splitbelow
-" set relativenumber
+set relativenumber
 
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
@@ -96,3 +96,5 @@ inoremap <C-w> <C-o>w
 inoremap <C-b> <C-o>b
 
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
+let g:python3_host_prog='/usr/bin/python3'
