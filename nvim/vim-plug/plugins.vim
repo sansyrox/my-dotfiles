@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'scrooloose/nerdcommenter'
     Plug 'yggdroot/indentline'
+    Plug 'tpope/vim-surround'
     Plug 'wellle/targets.vim'
     " Change dates fast
     Plug 'tpope/vim-speeddating'
@@ -19,10 +20,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'glts/vim-radical'
     " Repeat stuff
     Plug 'tpope/vim-repeat'
+    " Text Navigation
+    Plug 'unblevable/quick-scope'
     " Useful for React Commenting
     Plug 'suy/vim-context-commentstring'
     " highlight all matches under cursor
-    Plug 'RRethy/vim-illuminate'
+    " Plug 'RRethy/vim-illuminate'
 
   if exists('g:vscode')
     " Easy motion for VSCode
@@ -54,8 +57,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'ChristianChiarulli/nv-code'
     " Plug 'kyazdani42/blue-moon'
     " Intellisense
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'zxqfl/tabnine-vim'
+    Plug 'neoclide/coc.nvim'
+    ", {'branch': 'release'}
     " Status Line
     Plug 'vim-airline/vim-airline'
     Plug 'kevinhwang91/rnvimr'
@@ -80,9 +83,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/goyo.vim'
     " Snippets
     Plug 'honza/vim-snippets'
-    "Rust Extension
-    Plug 'rust-lang/rust.vim'
-    "Emmet extension and auto completion
     Plug 'mattn/emmet-vim'
     " Better tabline
     Plug 'mg979/vim-xtabline'
@@ -94,8 +94,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto change html tags
     Plug 'AndrewRadev/tagalong.vim'
     " live server
-    " Plug 'turbio/bracey.vim'
-    Plug 'tylerbrazier/vim-bracepair'
+    Plug 'turbio/bracey.vim'
     " Smooth scroll
     Plug 'psliwka/vim-smoothie'
     " async tasks
@@ -125,10 +124,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     Plug 'moll/vim-bbye'
     Plug 'ianding1/leetcode.vim'
+    Plug 'qalshidi/vim-bettergrep'
+    Plug 'jxnblk/vim-mdx-js'
     " Plug 'yuezk/vim-js'
-    Plug 'tpope/vim-surround'
-    "Plug for automatic virtual envs
-    Plug 'sansyrox/vim-python-virtualenv'
     " Plug 'maxmellon/vim-jsx-pretty'
     " Plug 'jelera/vim-javascript-syntax'
     " Plugin Graveyard

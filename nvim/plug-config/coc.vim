@@ -10,9 +10,10 @@
     \ 'coc-pairs',
     \ 'coc-tsserver',
     \ 'coc-floaterm',
-    \ 'coc-css',
     \ 'coc-html',
+    \ 'coc-css',
     \ 'coc-emoji',
+    \ 'coc-cssmodules',
     \ 'coc-yaml',
     \ 'coc-python',
     \ 'coc-pyright',
@@ -24,10 +25,7 @@
     \ 'coc-yank',
     \ 'coc-json',
     \ 'coc-marketplace',
-    \ 'coc-ember',
-    \ 'coc-stylelintplus'
     \ ]
-    " \ 'coc-cssmodules',
     " \ 'coc-tabnine',
     " \ 'coc-highlight',
 

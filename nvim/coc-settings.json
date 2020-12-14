@@ -34,9 +34,9 @@
     "json",
     "python",
     "java",
-    "rust"
+    "sass",
+    "scss"
   ],
-  //    "scss",
   "coc.preferences.hoverTarget": "float",
 
   // python config

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ssanskar/.oh-my-zsh"
+export ZSH="/Users/sanskar/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,12 +12,12 @@ export ZSH="/Users/ssanskar/.oh-my-zsh"
 ZSH_THEME="pygmalion"
 
 # include Z
-. /usr/local/etc/profile.d/z.sh
+#. /usr/local/etc/profile.d/z.sh
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
+# If set to an empty array, this variabe will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
@@ -83,9 +83,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -190,5 +190,11 @@ bindkey -v
 	zle -N cd_home
 	bindkey "^h" cd_home
 
-source ~/dotfiles/spotify_env.sh
+#source ~/dotfiles/spotify_env.sh
+export PATH="$PATH:/Users/sanskar/Library/Python/3.8/bin"
+alias lzd='lazydocker'
 
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
