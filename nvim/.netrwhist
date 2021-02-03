@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/sanskar/Desktop/storage-internet/storage-internet'
+let g:netrw_dirhist_0='/Users/sanskar/Desktop/open-event-frontend'
+let g:netrw_dirhist_9='/Users/sanskar/Desktop/open-event-frontend/docs'
+let g:netrw_dirhist_8='/Users/sanskar/Desktop/open-event-frontend'
+let g:netrw_dirhist_7='/Users/sanskar/Desktop/rust/enums_playground'
+let g:netrw_dirhist_6='/Users/sanskar/Desktop/rust/enums_playground/src'
+let g:netrw_dirhist_5='/Users/sanskar/Desktop/rust/enums_playground'
+let g:netrw_dirhist_4='/Users/sanskar/Desktop/rust/bruuuuh/src'
+let g:netrw_dirhist_3='/Users/sanskar/Desktop/rust/bruuuuh'
+let g:netrw_dirhist_2='/Users/sanskar/Desktop/open-event-frontend/app/templates/components/account'
