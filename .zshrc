@@ -1,23 +1,19 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+ZSH_DISABLE_COMPFIX=true
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sanskar/.oh-my-zsh"
+export ZSH="/Users/sanskarjethi/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# pygmalion
-ZSH_THEME="pygmalion"
-
-# include Z
-#. /usr/local/etc/profile.d/z.sh
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variabe will have no effect.
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
@@ -30,8 +26,14 @@ ZSH_THEME="pygmalion"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -43,6 +45,8 @@ ZSH_THEME="pygmalion"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -62,8 +66,8 @@ ZSH_THEME="pygmalion"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
@@ -82,6 +86,20 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
@@ -123,78 +141,78 @@ function mvim {
     open -a macvim "$@"
 }
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
-
 bindkey -v
 
 # up
-	function up_widget() {
-		BUFFER="cd .."
-		zle accept-line
-	}
-	zle -N up_widget
-	bindkey "^k" up_widget
+function up_widget() {
+  BUFFER="cd .."
+  zle accept-line
+}
+zle -N up_widget
+bindkey "^k" up_widget
 
 # git
-	function git_prepare() {
-		if [ -n "$BUFFER" ];
-			then
-				BUFFER="git add -A && git commit -m \"$BUFFER\" && git push"
-		fi
+function git_prepare() {
+  if [ -n "$BUFFER" ];
+    then
+      BUFFER="git add -A && git commit -m \"$BUFFER\" && git push"
+  fi
 
-		if [ -z "$BUFFER" ];
-			then
-				BUFFER="git add -A && git commit -v && git push"
-		fi
+  if [ -z "$BUFFER" ];
+    then
+      BUFFER="git add -A && git commit -v && git push"
+  fi
 
-		zle accept-line
-	}
-	zle -N git_prepare
-	bindkey "^g" git_prepare
+  zle accept-line
+}
+zle -N git_prepare
+bindkey "^g" git_prepare
 
 # Edit and rerun
-	function edit_and_run() {
-		BUFFER="fc"
-		zle accept-line
-	}
-	zle -N edit_and_run
-	bindkey "^v" edit_and_run
+function edit_and_run() {
+  BUFFER="fc"
+  zle accept-line
+}
+zle -N edit_and_run
+bindkey "^v" edit_and_run
 
 # Enter
-	function enter_line() {
-		zle accept-line
-	}
-	zle -N enter_line
-	bindkey "^o" enter_line
+function enter_line() {
+  zle accept-line
+}
+zle -N enter_line
+bindkey "^o" enter_line
 
 # Sudo
-	function add_sudo() {
-		BUFFER="sudo "$BUFFER
-		zle end-of-line
-	}
-	zle -N add_sudo
-	bindkey "^s" add_sudo
+function add_sudo() {
+  BUFFER="sudo "$BUFFER
+  zle end-of-line
+}
+zle -N add_sudo
+bindkey "^s" add_sudo
 
-	# Home - Navigates to the current root workspace
-	function cd_home() {
-		printf "cd ~"
-	}
-	zle -N cd_home
-	bindkey "^h" cd_home
+# Home - Navigates to the current root workspace
+function cd_home() {
+  printf "cd ~"
+}
+zle -N cd_home
+bindkey "^h" cd_home
 
-#source ~/dotfiles/spotify_env.sh
-export PATH="$PATH:/Users/sanskar/Library/Python/3.8/bin"
 alias lzd='lazydocker'
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#create macsimus
+function macsimus() {
+  tmux new-session -d -s macsimus
+  tmux send-keys -t macsimus.0  "nvim $*" ENTER
+  tmux new-window
+  tmux attach-session
+}
+
